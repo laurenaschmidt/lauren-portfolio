@@ -1,4 +1,6 @@
 
+import { Mail } from "lucide-react";
+
 const projects = [
   {
     number: "01",
@@ -44,6 +46,21 @@ const projects = [
     linkLabel: "Project details coming soon",
     symbol: "↗",
   },
+
+
+  {
+    number: "05",
+    category: "GAME DEVELOPMENT",
+    title: "ChuckRun",
+    description:
+      "A Game Boy Advance game built in C, bringing classic handheld gaming to life through custom gameplay and low-level programming.",
+    technologies: ["C", "Game Boy Advance", "Game Development"],
+    href: "https://github.com/laurenaschmidt/ChuckRun",
+    linkLabel: "View on GitHub",
+    symbol: "♡",
+  },
+
+
 ];
 
 export default function Home() {
@@ -122,6 +139,30 @@ export default function Home() {
           </a>
         </div>
 
+
+<div className="mt-6 flex items-center gap-3">
+  <a
+    href="mailto:naurel3@gmail.com"
+    aria-label="Email Lauren"
+    title="Email me"
+    className="flex h-11 w-11 items-center justify-center rounded-full border border-[#ead8df] bg-white/70 text-[#a84f6d] transition hover:-translate-y-1 hover:border-[#d58ca2] hover:bg-[#f8e5ea]"
+  >
+    <Mail size={19} strokeWidth={1.7} />
+  </a>
+
+  <a
+    href="https://www.linkedin.com/in/lauren-schmidt-ga/"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="Lauren on LinkedIn"
+    title="Find me on LinkedIn"
+    className="flex h-11 w-11 items-center justify-center rounded-full border border-[#ead8df] bg-white/70 text-[#a84f6d] transition hover:-translate-y-1 hover:border-[#d58ca2] hover:bg-[#f8e5ea]"
+  >
+    <span className="text-sm font-bold tracking-tight">in</span>
+  </a>
+</div>
+
+
         <div className="mt-12 flex items-center gap-3 text-xs tracking-wide text-[#806a75]">
           <span className="h-px w-10 bg-[#d58ca2]" />
           A LITTLE BIT OF CODE, A LITTLE BIT OF CREATIVITY
@@ -157,7 +198,7 @@ export default function Home() {
               >
                 <div className="mb-8 flex items-center justify-between">
                   <span className="text-xs font-medium tracking-widest text-[#a84f6d]">
-                    {project.number} / 04
+                    {project.number} / 05
                   </span>
                   <span
                     aria-hidden="true"
@@ -178,6 +219,23 @@ export default function Home() {
                 <p className="mt-3 min-h-20 text-sm leading-7 text-[#806a75]">
                   {project.description}
                 </p>
+
+
+{project.title === "ChuckRun" && (
+  <div className="mt-5 overflow-hidden rounded-xl border border-[#ead8df] bg-white">
+    <iframe
+      src="https://drive.google.com/file/d/1296AY6Htf9y4wgNnsqU6ur22GQjWgGUV/preview"
+      title="ChuckRun gameplay demonstration"
+      className="aspect-video w-full"
+      allow="autoplay"
+      allowFullScreen
+    />
+    <p className="px-3 py-2 text-xs text-[#806a75]">
+      Gameplay demonstration
+    </p>
+  </div>
+)}
+
 
                 <div className="mt-5 flex flex-wrap gap-2">
                   {project.technologies.map((technology) => (

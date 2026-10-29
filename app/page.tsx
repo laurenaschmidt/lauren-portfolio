@@ -10,7 +10,9 @@ const projects = [
       "A full-stack reading app combining book discovery, personal organization, and AI-powered recommendations.",
     technologies: ["Next.js", "TypeScript", "PostgreSQL", "AI"],
     href: "https://github.com/laurenaschmidt/BOOKLIST2.0",
-    linkLabel: "View on GitHub",
+    linkLabel: "View Source on GitHub",
+    liveUrl: "https://booklist-2-0.vercel.app/",
+
     symbol: "✳",
   },
   {
@@ -20,8 +22,10 @@ const projects = [
     description:
       "Exploring book sales, pricing, longevity, and genre trends through SQL and data visualization.",
     technologies: ["SQL", "BigQuery", "Tableau"],
-    href: "#contact",
-    linkLabel: "Case study coming soon",
+    
+    href: "https://public.tableau.com/app/profile/lauren.schmidt4608/viz/AmazonBestsellers_17932002668670/AmazonBestsellers",
+    linkLabel: "Explore Tableau Dashboard",
+
     symbol: "↗",
   },
   {
@@ -31,8 +35,8 @@ const projects = [
     description:
       "Investigating the relationship between pyramid placements and solo competition results across seasons.",
     technologies: ["Data Analysis", "SQL", "Tableau"],
-    href: "#contact",
-    linkLabel: "Case study coming soon",
+    href: "https://public.tableau.com/app/profile/lauren.schmidt4608/viz/dance_moms/ThePyramidEffectDoesPyramidPlacementPredictSoloSuccess#1",
+    linkLabel: "Explore Tableau Dashboard",
     symbol: "✳",
   },
   {
@@ -42,8 +46,8 @@ const projects = [
     description:
       "A 3D university-themed runner built in Unity, combining gameplay programming, animation, and environment design.",
     technologies: ["Unity", "C#", "3D"],
-    href: "#contact",
-    linkLabel: "Project details coming soon",
+    href: "https://github.com/bkim82/MetroSurfers",
+    linkLabel: "View on Github",
     symbol: "↗",
   },
 
@@ -60,6 +64,17 @@ const projects = [
     symbol: "♡",
   },
 
+  {
+  number: "06",
+  category: "WEB DEVELOPMENT & DESIGN",
+  title: "Hammond Studio",
+  description:
+    "Designed and built a website for a beauty business using Square, integrating a custom Base44 application to create a seamless new-client experience. Combined website customization with third-party app embedding to support the business's client intake process.",
+  technologies: ["Square", "Base44", "Web Design", "Integration"],
+  href: "https://hammond-studio.square.site/",
+  linkLabel: "Visit Website",
+  symbol: "✳",
+},
 
 ];
 
@@ -196,9 +211,10 @@ export default function Home() {
                 key={project.number}
                 className="group rounded-2xl border border-[#ead8df] bg-[#fffafa] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#d58ca2] hover:shadow-lg hover:shadow-[#a84f6d]/5 md:p-8"
               >
+
                 <div className="mb-8 flex items-center justify-between">
                   <span className="text-xs font-medium tracking-widest text-[#a84f6d]">
-                    {project.number} / 05
+                    {project.number} / 06
                   </span>
                   <span
                     aria-hidden="true"
@@ -221,20 +237,66 @@ export default function Home() {
                 </p>
 
 
-{project.title === "ChuckRun" && (
+{project.title === "Booklist 2.0" && (
+  <div className="mb-6 overflow-hidden rounded-xl border border-[#ead8df] bg-white">
+    <img
+      src="/projects/booklist.png"
+      alt="Screenshot of the Booklist 2.0 reading application"
+      className="aspect-video w-full object-cover object-top"
+    />
+  </div>
+)}
+
+{project.title === "Book Sales Analysis" && (
+  <div className="mb-6 overflow-hidden rounded-xl border border-[#ead8df] bg-white">
+    <img
+      src="/projects/amazon.png"
+      alt="Screenshot of the tableau dashboard"
+      className="aspect-video w-full object-cover object-top"
+    />
+  </div>
+)}
+
+{project.title === "Dance Moms Analytics" && (
+  <div className="mb-6 overflow-hidden rounded-xl border border-[#ead8df] bg-white">
+    <img
+      src="/projects/dance.png"
+      alt="Screenshot of the tableau dashboard"
+      className="aspect-video w-full object-cover object-top"
+    />
+  </div>
+)}
+
+{project.title === "Hammond Studio" && (
+  <div className="mb-6 overflow-hidden rounded-xl border border-[#ead8df] bg-white">
+    <img
+      src="/projects/hammond.png"
+      alt="Screenshot of the home screen"
+      className="aspect-video w-full object-cover object-top"
+    />
+  </div>
+)}
+
+{(project.title === "ChuckRun" || project.title === "Tech Trek") && (
   <div className="mt-5 overflow-hidden rounded-xl border border-[#ead8df] bg-white">
     <iframe
-      src="https://drive.google.com/file/d/1296AY6Htf9y4wgNnsqU6ur22GQjWgGUV/preview"
-      title="ChuckRun gameplay demonstration"
+      src={
+        project.title === "ChuckRun"
+          ? "https://drive.google.com/file/d/1296AY6Htf9y4wgNnsqU6ur22GQjWgGUV/preview"
+          : "https://drive.google.com/file/d/1jbFMh0ckWFkmzghb6H6J_CVK3MktXCZl/preview"
+      }
+      title={`${project.title} gameplay demonstration`}
       className="aspect-video w-full"
       allow="autoplay"
       allowFullScreen
+      loading="lazy"
     />
     <p className="px-3 py-2 text-xs text-[#806a75]">
       Gameplay demonstration
     </p>
   </div>
 )}
+
 
 
                 <div className="mt-5 flex flex-wrap gap-2">
@@ -248,12 +310,29 @@ export default function Home() {
                   ))}
                 </div>
 
-                <a
-                  href={project.href}
-                  className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#a84f6d] transition group-hover:gap-3"
-                >
-                  {project.linkLabel} <span aria-hidden="true">→</span>
-                </a>
+                
+<div className="mt-7 flex flex-wrap gap-3">
+  <a
+    href={project.href}
+    target="_blank"
+    rel="noreferrer"
+    className="inline-flex items-center gap-2 text-sm font-semibold text-[#a84f6d] transition hover:gap-3"
+  >
+    {project.linkLabel} <span aria-hidden="true">↗</span>
+  </a>
+
+  {"liveUrl" in project && (
+    <a
+      href={project.liveUrl}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center gap-2 rounded-full bg-[#a84f6d] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#8e3c59]"
+    >
+      Try Live App <span aria-hidden="true">↗</span>
+    </a>
+  )}
+</div>
+
               </article>
             ))}
           </div>
@@ -278,9 +357,11 @@ export default function Home() {
 
           <div className="space-y-5 text-sm leading-8 text-[#806a75] md:text-base">
             <p>
-              I&apos;m a recent computer science graduate interested in the
-              intersection of software engineering, data analytics, and
-              creative problem-solving.
+              I'm a recent Georgia Tech computer science graduate, where I specialized in People and Media—a focus on the ways technology intersects with human behavior, communication, and digital media. This perspective shaped my interest in building technology that is not only technically sound, but also engaging, intuitive, and meaningful to the people who use it.
+
+I'm especially interested in the intersection of software engineering, data analytics, and creative problem-solving. Alongside my degree, I earned the Google Data Analytics Professional Certificate, expanding my skills in working with data, uncovering patterns, and turning insights into actionable ideas.
+
+Whether I'm building a full-stack application, exploring a dataset, or experimenting with a new project, I love learning how things work and finding creative ways to bring ideas to life. I'm excited to keep growing as a developer and analyst while working on projects that combine technical depth with a human-centered perspective.
             </p>
             <p>
               I love learning how things work, turning ideas into real
@@ -302,6 +383,7 @@ export default function Home() {
                   "PostgreSQL",
                   "Tableau",
                   "Unity",
+                  "Java"
                 ].map((skill) => (
                   <span
                     key={skill}

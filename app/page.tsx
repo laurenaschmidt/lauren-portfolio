@@ -44,7 +44,7 @@ const projects = [
     category: "GAME DEVELOPMENT",
     title: "Tech Trek",
     description:
-      "A 3D university-themed runner built in Unity, combining gameplay programming, animation, and environment design.",
+      "A 3D university-themed runner built in Unity with a group, combining gameplay programming, animation, and environment design.",
     technologies: ["Unity", "C#", "3D"],
     href: "https://github.com/bkim82/MetroSurfers",
     linkLabel: "View on Github",
@@ -74,6 +74,18 @@ const projects = [
   href: "https://hammond-studio.square.site/",
   linkLabel: "Visit Website",
   symbol: "✳",
+},
+
+{
+  number: "07",
+  category: "FULL-STACK DEVELOPMENT",
+  title: "PokeTrade",
+  description:
+    "Collaborated with a team to build a Django-based Pokémon trading marketplace where users can customize profiles, buy, sell, and trade Pokémon, and discover local trading conventions. Applied Agile (Scrum) methodology and software engineering principles throughout development.",
+  technologies: ["Python", "Django", "Web Development", "Agile/Scrum"],
+  href: "https://sites.google.com/view/poketrade-portfolio/home",
+  linkLabel: "Explore Project",
+  symbol: "♡",
 },
 
 ];
@@ -214,7 +226,7 @@ export default function Home() {
 
                 <div className="mb-8 flex items-center justify-between">
                   <span className="text-xs font-medium tracking-widest text-[#a84f6d]">
-                    {project.number} / 06
+                    {project.number} / 07
                   </span>
                   <span
                     aria-hidden="true"
@@ -277,25 +289,29 @@ export default function Home() {
   </div>
 )}
 
-{(project.title === "ChuckRun" || project.title === "Tech Trek") && (
+
+{["ChuckRun", "Tech Trek", "PokeTrade"].includes(project.title) && (
   <div className="mt-5 overflow-hidden rounded-xl border border-[#ead8df] bg-white">
     <iframe
       src={
         project.title === "ChuckRun"
           ? "https://drive.google.com/file/d/1296AY6Htf9y4wgNnsqU6ur22GQjWgGUV/preview"
-          : "https://drive.google.com/file/d/1jbFMh0ckWFkmzghb6H6J_CVK3MktXCZl/preview"
+          : project.title === "Tech Trek"
+            ? "https://drive.google.com/file/d/1jbFMh0ckWFkmzghb6H6J_CVK3MktXCZl/preview"
+            : "https://www.youtube.com/embed/ilzXDKjWy1Q"
       }
-      title={`${project.title} gameplay demonstration`}
+      title={`${project.title} project demonstration`}
       className="aspect-video w-full"
-      allow="autoplay"
+      allow="autoplay; encrypted-media; picture-in-picture"
       allowFullScreen
       loading="lazy"
     />
     <p className="px-3 py-2 text-xs text-[#806a75]">
-      Gameplay demonstration
+      Project walkthrough
     </p>
   </div>
 )}
+
 
 
 

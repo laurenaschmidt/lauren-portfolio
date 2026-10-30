@@ -2,8 +2,21 @@
 import { Mail } from "lucide-react";
 
 const projects = [
+
+{
+  number: "01",
+  category: "WEB DEVELOPMENT & DESIGN",
+  title: "SKG Advisory",
+  description:
+    "Designed and developed a website using Squarespace, focusing on creating a polished, user-friendly experience tailored to the client's needs. Worked on site structure, visual design, and content presentation.",
+  technologies: ["Squarespace", "Web Design", "UI/UX"],
+  href: "#projects",
+  linkLabel: "Website Coming Soon",
+  symbol: "✳",
+},
+
   {
-    number: "01",
+    number: "02",
     category: "SOFTWARE DEVELOPMENT",
     title: "Booklist 2.0",
     description:
@@ -15,8 +28,21 @@ const projects = [
 
     symbol: "✳",
   },
+
   {
-    number: "02",
+  number: "03",
+  category: "WEB DEVELOPMENT & DESIGN",
+  title: "Hammond Studio",
+  description:
+    "Designed and built a website for a beauty business using Square, integrating a custom Base44 application to create a seamless new-client experience. Combined website customization with third-party app embedding to support the business's client intake process.",
+  technologies: ["Square", "Base44", "Web Design", "Integration"],
+  href: "https://hammond-studio.square.site/",
+  linkLabel: "Visit Website",
+  symbol: "✳",
+},
+
+  {
+    number: "04",
     category: "DATA ANALYTICS",
     title: "Book Sales Analysis",
     description:
@@ -29,18 +55,7 @@ const projects = [
     symbol: "↗",
   },
   {
-    number: "03",
-    category: "DATA EXPLORATION",
-    title: "Dance Moms Analytics",
-    description:
-      "Investigating the relationship between pyramid placements and solo competition results across seasons.",
-    technologies: ["Data Analysis", "SQL", "Tableau"],
-    href: "https://public.tableau.com/app/profile/lauren.schmidt4608/viz/dance_moms/ThePyramidEffectDoesPyramidPlacementPredictSoloSuccess#1",
-    linkLabel: "Explore Tableau Dashboard",
-    symbol: "✳",
-  },
-  {
-    number: "04",
+    number: "05",
     category: "GAME DEVELOPMENT",
     title: "Tech Trek",
     description:
@@ -53,7 +68,7 @@ const projects = [
 
 
   {
-    number: "05",
+    number: "06",
     category: "GAME DEVELOPMENT",
     title: "ChuckRun",
     description:
@@ -64,17 +79,6 @@ const projects = [
     symbol: "♡",
   },
 
-  {
-  number: "06",
-  category: "WEB DEVELOPMENT & DESIGN",
-  title: "Hammond Studio",
-  description:
-    "Designed and built a website for a beauty business using Square, integrating a custom Base44 application to create a seamless new-client experience. Combined website customization with third-party app embedding to support the business's client intake process.",
-  technologies: ["Square", "Base44", "Web Design", "Integration"],
-  href: "https://hammond-studio.square.site/",
-  linkLabel: "Visit Website",
-  symbol: "✳",
-},
 
 {
   number: "07",
@@ -87,6 +91,17 @@ const projects = [
   linkLabel: "Explore Project",
   symbol: "♡",
 },
+{
+    number: "08",
+    category: "DATA EXPLORATION",
+    title: "Dance Moms Analytics",
+    description:
+      "Investigating the relationship between pyramid placements and solo competition results across seasons.",
+    technologies: ["Data Analysis", "SQL", "Tableau"],
+    href: "https://public.tableau.com/app/profile/lauren.schmidt4608/viz/dance_moms/ThePyramidEffectDoesPyramidPlacementPredictSoloSuccess#1",
+    linkLabel: "Explore Tableau Dashboard",
+    symbol: "✳",
+  },
 
 ];
 
@@ -137,7 +152,7 @@ export default function Home() {
           Hello, I&apos;m Lauren
           <span className="text-[#b65c78]">.</span>
           <br />
-          <span className="font-normal italic text-[#a84f6d]">
+          <span className="text-[43px] font-normal text-[#a84f6d]">
             I love making
             <br className="hidden sm:block" /> ideas come to life.
           </span>
@@ -226,7 +241,7 @@ export default function Home() {
 
                 <div className="mb-8 flex items-center justify-between">
                   <span className="text-xs font-medium tracking-widest text-[#a84f6d]">
-                    {project.number} / 07
+                    {project.number} / 08
                   </span>
                   <span
                     aria-hidden="true"
@@ -284,6 +299,16 @@ export default function Home() {
     <img
       src="/projects/hammond.png"
       alt="Screenshot of the home screen"
+      className="aspect-video w-full object-cover object-top"
+    />
+  </div>
+)}
+
+{project.title === "SKG Advisory" && (
+  <div className="mb-6 overflow-hidden rounded-xl border border-[#ead8df] bg-white">
+    <img
+      src="/projects/skg.png"
+      alt="Screenshot of Susan's website"
       className="aspect-video w-full object-cover object-top"
     />
   </div>
@@ -399,7 +424,12 @@ Whether I'm building a full-stack application, exploring a dataset, or experimen
                   "PostgreSQL",
                   "Tableau",
                   "Unity",
-                  "Java"
+                  "Java",
+                  "HTML",
+                  "CSS",
+                  "C",
+                  "JavaScript",
+                  "C#"
                 ].map((skill) => (
                   <span
                     key={skill}

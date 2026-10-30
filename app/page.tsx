@@ -41,8 +41,21 @@ const projects = [
   symbol: "✳",
 },
 
+{
+  number: "04",
+  category: "MOBILE APP DEVELOPMENT",
+  title: "My Masterpiece",
+  description:
+    "Collaborated with a team to develop an art-focused social media application where users can share and engage with creative work. Built using React Native and Expo, with MongoDB and Firebase supporting the application's data and backend functionality.",
+  technologies: ["React Native", "MongoDB", "Expo", "Firebase"],
+  href: "https://github.com/Johnniewalker101/MyMasterpiece",
+  linkLabel: "View on GitHub",
+  symbol: "♡",
+},
+
+
   {
-    number: "04",
+    number: "05",
     category: "DATA ANALYTICS",
     title: "Book Sales Analysis",
     description:
@@ -55,7 +68,7 @@ const projects = [
     symbol: "↗",
   },
   {
-    number: "05",
+    number: "06",
     category: "GAME DEVELOPMENT",
     title: "Tech Trek",
     description:
@@ -68,7 +81,7 @@ const projects = [
 
 
   {
-    number: "06",
+    number: "07",
     category: "GAME DEVELOPMENT",
     title: "ChuckRun",
     description:
@@ -81,7 +94,7 @@ const projects = [
 
 
 {
-  number: "07",
+  number: "08",
   category: "FULL-STACK DEVELOPMENT",
   title: "PokeTrade",
   description:
@@ -91,8 +104,21 @@ const projects = [
   linkLabel: "Explore Project",
   symbol: "♡",
 },
+
 {
-    number: "08",
+  number: "09",
+  category: "FULL-STACK DEVELOPMENT",
+  title: "Movies Express",
+  description:
+    "Collaborated with a team to develop a Django-based web application where users can browse movie listings, manage movie orders, and post reviews. Applied Agile (Scrum) methodology and software engineering principles throughout the development process.",
+  technologies: ["Python", "Django", "HTML", "CSS", "Agile/Scrum"],
+  href: "YOUR_PUBLIC_PROJECT_PORTFOLIO_URL",
+  linkLabel: "Explore Project",
+  symbol: "✳",
+},
+
+{
+    number: "10",
     category: "DATA EXPLORATION",
     title: "Dance Moms Analytics",
     description:
@@ -241,7 +267,7 @@ export default function Home() {
 
                 <div className="mb-8 flex items-center justify-between">
                   <span className="text-xs font-medium tracking-widest text-[#a84f6d]">
-                    {project.number} / 08
+                    {project.number} / 10
                   </span>
                   <span
                     aria-hidden="true"
@@ -315,7 +341,20 @@ export default function Home() {
 )}
 
 
-{["ChuckRun", "Tech Trek", "PokeTrade"].includes(project.title) && (
+{project.title === "My Masterpiece" && (
+  <div className="mb-6 overflow-hidden rounded-xl border border-[#ead8df] bg-white">
+    <img
+      src="/projects/masterpiece.png"
+      alt="My Masterpiece mobile social media application"
+      className="aspect-video w-full object-cover object-top"
+    />
+  </div>
+)}
+
+
+
+
+{["ChuckRun", "Tech Trek", "PokeTrade", "Movies Express"].includes(project.title) && (
   <div className="mt-5 overflow-hidden rounded-xl border border-[#ead8df] bg-white">
     <iframe
       src={
@@ -323,7 +362,9 @@ export default function Home() {
           ? "https://drive.google.com/file/d/1296AY6Htf9y4wgNnsqU6ur22GQjWgGUV/preview"
           : project.title === "Tech Trek"
             ? "https://drive.google.com/file/d/1jbFMh0ckWFkmzghb6H6J_CVK3MktXCZl/preview"
-            : "https://www.youtube.com/embed/ilzXDKjWy1Q"
+            : project.title === "Movies Express"
+              ? "https://www.youtube.com/embed/NzIXTNN2C3g"
+              : "https://www.youtube.com/embed/ilzXDKjWy1Q"
       }
       title={`${project.title} project demonstration`}
       className="aspect-video w-full"
@@ -336,6 +377,7 @@ export default function Home() {
     </p>
   </div>
 )}
+
 
 
 
